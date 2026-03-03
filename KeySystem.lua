@@ -62,7 +62,7 @@ v3:AddButton({
                 Duration = 3,
             })
             task.wait(1)
-            loadstring(game:HttpGet('https://pastebin.com/raw/0qtSAMMf'))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/lmpstudios-dev/DemonHub/main/script.lua"))()
         end
     end,
 })
