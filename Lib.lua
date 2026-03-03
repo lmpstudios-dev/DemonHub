@@ -195,6 +195,7 @@ tabSelection.Size = UDim2.new(1, -30, 0, 25)
 tabSelection.Visible = false
 tabSelection.Image = "rbxassetid://2851929490"
 tabSelection.ImageColor3 = Color3.new(0.145098, 0.14902, 0.156863)
+tabSelection.ImageTransparency = 1 -- Hace invisible el cuadro de la barra
 tabSelection.ScaleType = Enum.ScaleType.Slice
 tabSelection.SliceCenter = Rect.new(4, 4, 4, 4)
 
@@ -405,6 +406,7 @@ textButtonRoundify4px_2.BackgroundTransparency = 1
 textButtonRoundify4px_2.Size = UDim2.new(1, 0, 1, 0)
 textButtonRoundify4px_2.Image = "rbxassetid://2851929490"
 textButtonRoundify4px_2.ImageColor3 = Color3.new(0.203922, 0.207843, 0.219608)
+textButtonRoundify4px_2.ImageTransparency = 1 -- Hace invisible el cuadro del botón
 textButtonRoundify4px_2.ScaleType = Enum.ScaleType.Slice
 textButtonRoundify4px_2.SliceCenter = Rect.new(4, 4, 4, 4)
 
