@@ -4,7 +4,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 
-local window = library:AddWindow("Muscle Legends V5 | Reaper Scripts Cracked By ZTX", {
+local window = library:AddWindow("DemonHub | Free", {
     main_color = Color3.fromRGB(170, 0, 0), -- Color
     min_size = Vector2.new(550, 550), -- Size of the GUI
     can_resize = false,
