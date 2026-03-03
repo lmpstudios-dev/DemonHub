@@ -2465,7 +2465,8 @@ end)
 
 local Credits = window:AddTab("Credits")
 
-Credits:AddLabel("Paid Version")
-Credits:AddLabel("Script Made By Reaper Cracked By ZTX")
+Credits:AddLabel("Free Version")
+Credits:AddLabel("Script DemonHub")
+Credits:AddLabel("Still in progress")
 
-Credits:AddLabel("Discord: olliezao.m80.")
+Credits:AddLabel("Discord: the.ulisted")
