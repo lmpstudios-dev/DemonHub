@@ -1206,7 +1206,7 @@ end)
 tDrop:Add("Night"); tDrop:Add("Day"); tDrop:Add("Alora"); tDrop:Add("2nd Alora Night")
 
 -- ============================================================
---  SECCIÓN: PLAYER TAG (AJUSTADO: MÁS ARRIBA)
+--  SECCIÓN: PLAYER TAG (SÚPER ELEVADO)
 -- ============================================================
 settingsTab:AddLabel("══════ PLAYER TAG ══════")
 
@@ -1218,6 +1218,7 @@ local function createTag(char)
     if not char then return end
     local head = char:WaitForChild("Head", 5)
     if head then
+        -- Limpieza de seguridad
         if head:FindFirstChild("DemonTag") then head.DemonTag:Destroy() end
 
         local billboard = Instance.new("BillboardGui")
@@ -1226,8 +1227,8 @@ local function createTag(char)
         billboard.Adornee = head
         billboard.Size = UDim2.new(0, 150, 0, 50)
         
-        -- AJUSTE: Subido a 4.5 para que esté bien arriba
-        billboard.StudsOffset = Vector3.new(0, 4.5, 0) 
+        -- ALTURA: 6.5 studs (bastante alto sobre el jugador)
+        billboard.StudsOffset = Vector3.new(0, 6.5, 0) 
         billboard.AlwaysOnTop = true
 
         local text = Instance.new("TextLabel")
@@ -1235,8 +1236,8 @@ local function createTag(char)
         text.BackgroundTransparency = 1
         text.Size = UDim2.new(1, 0, 1, 0)
         text.Text = "DEMON"
-        text.TextColor3 = Color3.fromHex("#a30000") -- Color solicitado
-        text.TextSize = 24 
+        text.TextColor3 = Color3.fromHex("#a30000") -- Rojo solicitado
+        text.TextSize = 25 -- Tamaño balanceado
         text.Font = Enum.Font.GothamBold
         text.TextStrokeTransparency = 0.4 
         
@@ -1249,7 +1250,7 @@ settingsTab:AddButton("TAG", function()
     
     if tagActive then
         createTag(LP.Character)
-        -- Conexión para que no se quite al morir
+        -- Detectar cuando el jugador reaparece para mantener el tag
         charConn = LP.CharacterAdded:Connect(function(newChar)
             task.wait(0.5)
             if tagActive then createTag(newChar) end
@@ -1257,10 +1258,11 @@ settingsTab:AddButton("TAG", function()
         
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "DemonHub",
-            Text = "Tag DEMON activado (Elevado)",
+            Text = "Tag DEMON activado (Súper Elevado)",
             Duration = 2
         })
     else
+        -- Limpieza total al desactivar
         if charConn then charConn:Disconnect(); charConn = nil end
         if LP.Character and LP.Character:FindFirstChild("Head") then
             local tag = LP.Character.Head:FindFirstChild("DemonTag")
